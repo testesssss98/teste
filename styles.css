@@ -1,0 +1,17 @@
+/* Estilo adicional para a seção de saldo e depósito */
+#saldoSection {
+    margin-top: 20px;
+}
+
+#depositForm {
+    margin-top: 20px;
+}
+
+#depositForm input {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#depositForm button {
+    margin-top: 10px;
+}

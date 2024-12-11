@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Carros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div id="userIcon" onclick="toggleMenu()">
+            <img src="user-icon.png" alt="Ícone de Usuário">
+        </div>
+        <div id="userMenu" class="hidden">
+            <ul>
+                <li onclick="showSection('saldo')">Meu Saldo</li>
+                <li onclick="showSection('carrinho')">Carrinho</li>
+                <li onclick="showSection('pendentes')">Pendentes</li>
+            </ul>
+        </div>
+    </header>
+
+    <main id="mainContent">
+        <div id="loginForm">
+            <input type="text" id="userName" placeholder="Digite seu nome">
+            <button onclick="createAccount()">Criar Conta</button>
+        </div>
+
+        <div id="store" class="hidden">
+            <div id="categories">
+                <button onclick="showCategories()">Categorias</button>
+                <div id="carCategories" class="hidden">
+                    <ul>
+                        <li onclick="showCars('koenigsegg')">Koenigsegg</li>
+                        <li onclick="showCars('ferrari')">Ferrari</li>
+                        <li onclick="showCars('lamborghini')">Lamborghini</li>
+                        <li onclick="showCars('mclaren')">McLaren</li>
+                        <li onclick="showCars('porsche')">Porsche</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="carDetails" class="hidden">
+                <h2>Escolha seu Carro</h2>
+                <div id="carList"></div>
+            </div>
+
+            <div id="carSelectionDetails" class="hidden">
+                <h3>Selecione a cor e veja os detalhes</h3>
+                <div id="carInfo">
+                    <img id="selectedCarImage" src="" alt="Imagem do Carro" />
+                    <p id="carModel"></p>
+                    <p id="carEngine"></p>
+                    <div id="colorOptions"></div>
+                </div>
+                <button onclick="addToCart()">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+
+        <div id="purchaseConfirmation" class="hidden">
+            <button onclick="confirmPurchase()">Confirmar Compra</button>
+        </div>
+
+        <div id="notification" class="hidden">Compra realizada com sucesso!</div>
+
+        <div id="saldoSection" class="hidden">
+            <h3>Meu Saldo: R$ <span id="userBalance">1000000</span></h3>
+            <button onclick="depositMoney()">Depositar Dinheiro</button>
+            <div id="depositForm" class="hidden">
+                <h4>Responda à pergunta para ganhar saldo:</h4>
+                <p id="securityQuestion"></p>
+                <input type="text" id="userAnswer" placeholder="Sua resposta">
+                <button onclick="checkAnswer()">Enviar Resposta</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Loja de Carros - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
